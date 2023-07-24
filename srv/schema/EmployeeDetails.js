@@ -65,6 +65,12 @@ const employeeDetailsSchema = new mongoose.Schema({
     type: Date,
     default: () => Date.now(),
   },
+  address: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Address",
+    },
+  ],
 });
 
 const EmployeeDetailsModel = mongoose.model(

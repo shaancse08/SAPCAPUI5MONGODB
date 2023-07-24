@@ -12,4 +12,16 @@ entity EmployeeDetails {
       phoneNumber : Integer64;
       createdAt   : DateTime;
       updatedAt   : DateTime;
+      address     : Association to many Address;
+}
+
+
+@cds.persistence.skip: true
+entity Address {
+  key _id     : String;
+      street  : String;
+      city    : String;
+      country : String;
+      pincode : Integer;
+      landmark: String;
 }

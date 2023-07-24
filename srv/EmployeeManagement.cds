@@ -5,5 +5,6 @@ using {cap.ui5.mongo as db} from '../db/schema';
 service EmployeeManagement {
 
     entity EmployeeDetails as projection on db.EmployeeDetails;
+    entity Address         as projection on db.Address;
 
 }

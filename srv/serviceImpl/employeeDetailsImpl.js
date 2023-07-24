@@ -1,15 +1,14 @@
-const cds = require("@sap/cds");
-const mongoose = require("mongoose");
 const EmployeeDetailsModel = require("../schema/EmployeeDetails");
 
 const createEmployeeDetails = async (req) => {
   try {
     const oPayload = req.data;
     const oEmployee = new EmployeeDetailsModel(oPayload);
-    await oEmployee.save();
-    return req.data;
+    const {_doc: oNewUser} = await oEmployee.save();
+    oNewUser._id = oNewUser._id.toString();
+    return oNewUser;
   } catch (error) {
-    console.log(error.messsage);
+    req.reject(401, error.message);
   }
 };
 

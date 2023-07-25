@@ -13,6 +13,7 @@ entity EmployeeDetails {
       createdAt   : DateTime;
       updatedAt   : DateTime;
       address     : Association to many Address;
+      address1     : Association to many Address;
 }
 
 

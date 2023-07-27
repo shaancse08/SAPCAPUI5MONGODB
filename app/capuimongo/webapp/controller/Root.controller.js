@@ -59,6 +59,7 @@ sap.ui.define(
         );
         oEmployeePayload.address__id = sAddressId;
         this.postDataToBackend("/EmployeeDetails", oEmployeePayload);
+        this.oCreateFragment.close();
       },
 
       onDialogClose: function (oEvent) {

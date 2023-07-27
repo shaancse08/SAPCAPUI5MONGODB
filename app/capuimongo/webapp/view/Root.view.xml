@@ -47,6 +47,12 @@
                             text="Age"
                         />
                     </Column>
+                    <Column id="idDOBColumn">
+                        <Text
+                            id="idDOBColText"
+                            text="DOB"
+                        />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="idEmployeeColumnListItem" type="Navigation">
@@ -68,6 +74,10 @@
                             <Text
                                 id="idAgeCellText"
                                 text="{age}"
+                            />
+                            <Text
+                                id="idDOBCellText"
+                                text="{path: 'DOB', formatter: '.formatter.getDateFormatted'}"
                             />
                         </cells>
                     </ColumnListItem>

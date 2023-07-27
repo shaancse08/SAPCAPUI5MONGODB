@@ -13,6 +13,8 @@
             <Table
                 id="idEmployeeTable"
                 items="{/EmployeeDetails}"
+                itemPress="onEmployeePress"
+                mode="SingleSelectMaster"
             >
                 <headerToolbar>
                     <OverflowToolbar id="idEmployeeTableHeader">

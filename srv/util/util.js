@@ -22,6 +22,9 @@ const getTopSkip = async (oLimit) => {
     top: 0,
     skip: 0,
   };
+  if(!oLimit){
+    return oTopSkip;
+  }
 
   const { rows, offset } = oLimit;
 

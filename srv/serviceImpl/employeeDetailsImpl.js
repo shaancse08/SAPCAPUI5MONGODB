@@ -17,14 +17,24 @@ const createEmployeeDetails = async (req) => {
  */
 const getEmployeeDetails = async (req) => {
   const { columns, from, limit, orderBy } = req.query.SELECT;
-  const aExpands = await getExpands(columns);
+  const { _id } = req.data;
+  // const aExpands = await getExpands(columns);
   const { top, skip } = await getTopSkip(limit);
-  const aData = await EmployeeDetailsModel.find()
-    .limit(top)
-    .skip(skip)
-    .populate("address");
+  let aData = [];
 
-    return aData;
+  if (from["ref"].length > 0 && _id) {
+    aData = await EmployeeDetailsModel.find({ _id: _id })
+      .limit(top)
+      .skip(skip)
+      .populate("address");
+  } else {
+    aData = await EmployeeDetailsModel.find()
+      .limit(top)
+      .skip(skip)
+      .populate("address");
+  }
+
+  return aData;
 };
 
 /**

@@ -10,5 +10,8 @@ sap.ui.define([], function () {
         .split(" ");
       return `${day} ${month} ${date} ${year}`;
     },
+    getPhoneNumberFromatted: function(sNumber){
+        return sNumber.toString().replaceAll(",", "")
+    }
   };
 });

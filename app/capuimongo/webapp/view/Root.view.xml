@@ -16,10 +16,21 @@
             >
                 <headerToolbar>
                     <OverflowToolbar id="idEmployeeTableHeader">
-                        <Title id="idEmployeeTableBar" text="Employees"></Title>
-                        <ToolbarSpacer id="idEmployeeTableSpacer"/>
-                        <Button id="idCreateButton" icon="sap-icon://add" press="onCreateEmployee"></Button>
-                        <Button id="idDeleteButton" icon="sap-icon://delete" press="onDeleteEmployee"></Button>
+                        <Title
+                            id="idEmployeeTableBar"
+                            text="Employees"
+                        />
+                        <ToolbarSpacer id="idEmployeeTableSpacer" />
+                        <Button
+                            id="idCreateButton"
+                            icon="sap-icon://add"
+                            press="onCreateEmployee"
+                        />
+                        <Button
+                            id="idDeleteButton"
+                            icon="sap-icon://delete"
+                            press="onDeleteEmployee"
+                        />
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
@@ -55,7 +66,10 @@
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem id="idEmployeeColumnListItem" type="Navigation">
+                    <ColumnListItem
+                        id="idEmployeeColumnListItem"
+                        type="Navigation"
+                    >
                         <cells>
                             <Text
                                 id="idNameCellText"
@@ -68,8 +82,7 @@
                             />
                             <Link
                                 id="idPhoneCellText"
-                                text="{phoneNumber}"
-                                href="mailto:{email}"
+                                text="{path: 'phoneNumber', formatter: '.formatter.getPhoneNumberFromatted'}"
                             />
                             <Text
                                 id="idAgeCellText"

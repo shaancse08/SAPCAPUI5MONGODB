@@ -1,0 +1,149 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="idCreateEmployeeDialog"
+        showHeader="false"
+    >
+        <form:SimpleForm
+            id="idCreateEmployeeForm"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Create Employee"
+            labelSpanXL="4"
+            labelSpanL="3"
+            labelSpanM="4"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="4"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+        >
+            <core:Title
+                id="idEmployeeDetails"
+                text="Employee details"
+            />
+
+            <Label
+                id="idFnameLabel"
+                text="First Name"
+            />
+            <Input
+                id="idFNameText"
+                value=""
+            />
+
+            <Label
+                id="idlNameLabel"
+                text="Last Name"
+            />
+            <Input
+                id="idlNameText"
+                value=""
+            />
+
+            <Label
+                id="idDOBLabel"
+                text="Date of Birth"
+            />
+            <DatePicker
+                id="idDOBText"
+                value=""
+            />
+
+            <Label
+                id="idEmailLabel"
+                text="Email"
+            />
+            <Input
+                id="idEmailText"
+                type="Email"
+                value=""
+            />
+
+            <Label
+                id="idPhoneNumberLabel"
+                text="Phone Number"
+            />
+            <Input
+                id="idPhoneNumberText"
+                type="Number"
+                value=""
+            />
+
+            <core:Title
+                id="idAddressDetails"
+                text="Address details"
+            />
+
+            <Label
+                id="idStreetLabel"
+                text="Street"
+            />
+            <Input
+                id="idStreetText"
+                value=""
+            />
+
+            <Label
+                id="idCityLabel"
+                text="City"
+            />
+            <Input
+                id="idCityText"
+                value=""
+            />
+
+            <Label
+                id="idPinCodeLabel"
+                text="PinCode"
+            />
+            <Input
+                id="idPinCodeText"
+                type="Number"
+                value=""
+            />
+
+            <Label
+                id="idCountryLabel"
+                text="Country"
+            />
+            <Input
+                id="idCountryText"
+                value=""
+            />
+
+            <Label
+                id="idLandMarkLabel"
+                text="Landmark"
+            />
+            <Input
+                id="idLandMarkText"
+                value=""
+            />
+        </form:SimpleForm>
+        <beginButton>
+            <Button
+                id="idSaveBtn"
+                text="Save"
+                type="Accept"
+                press="onSaveEmployeeDetails"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="idCancelBtn"
+                text="Cancel"
+                type="Reject"
+                press="onDialogClose"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

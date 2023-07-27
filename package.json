@@ -11,9 +11,11 @@
     "mongoose": "^7.4.0"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.108.10",
     "sqlite3": "^5"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-capuimongo": "cds watch --open capuimongo/webapp/index.html?sap-ui-xx-viewCache=false"
   }
 }

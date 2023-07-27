@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="EmployeeManagement" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="EmployeeDetails" EntityType="EmployeeManagement.EmployeeDetails">
+                    <NavigationPropertyBinding Path="address" Target="Address"/>
+                    <NavigationPropertyBinding Path="address1" Target="Address"/>
+                </EntitySet>
+                <EntitySet Name="Address" EntityType="EmployeeManagement.Address"/>
+            </EntityContainer>
+            <EntityType Name="EmployeeDetails">
+                <Key>
+                    <PropertyRef Name="_id"/>
+                </Key>
+                <Property Name="_id" Type="Edm.String" Nullable="false"/>
+                <Property Name="fName" Type="Edm.String"/>
+                <Property Name="lName" Type="Edm.String"/>
+                <Property Name="DOB" Type="Edm.Date"/>
+                <Property Name="age" Type="Edm.Int32"/>
+                <Property Name="email" Type="Edm.String"/>
+                <Property Name="phoneNumber" Type="Edm.Int64"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset"/>
+                <Property Name="updatedAt" Type="Edm.DateTimeOffset"/>
+                <NavigationProperty Name="address" Type="Collection(EmployeeManagement.Address)"/>
+                <Property Name="address__id" Type="Edm.String"/>
+                <NavigationProperty Name="address1" Type="Collection(EmployeeManagement.Address)"/>
+                <Property Name="address1__id" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Address">
+                <Key>
+                    <PropertyRef Name="_id"/>
+                </Key>
+                <Property Name="_id" Type="Edm.String" Nullable="false"/>
+                <Property Name="street" Type="Edm.String"/>
+                <Property Name="city" Type="Edm.String"/>
+                <Property Name="country" Type="Edm.String"/>
+                <Property Name="pincode" Type="Edm.Int32"/>
+                <Property Name="landmark" Type="Edm.String"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

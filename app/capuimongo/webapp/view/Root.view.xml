@@ -1,0 +1,78 @@
+<mvc:View
+    controllerName="cap.ui.mongo.capuimongo.controller.Root"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="true"
+    >
+        <content>
+            <Table
+                id="idEmployeeTable"
+                items="{/EmployeeDetails}"
+            >
+                <headerToolbar>
+                    <OverflowToolbar id="idEmployeeTableHeader">
+                        <Title id="idEmployeeTableBar" text="Employees"></Title>
+                        <ToolbarSpacer id="idEmployeeTableSpacer"/>
+                        <Button id="idCreateButton" icon="sap-icon://add" press="onCreateEmployee"></Button>
+                        <Button id="idDeleteButton" icon="sap-icon://delete" press="onDeleteEmployee"></Button>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="idNameColumn">
+                        <Text
+                            id="idNameColText"
+                            text="Name"
+                        />
+                    </Column>
+                    <Column id="idEmailColumn">
+                        <Text
+                            id="idEmailColText"
+                            text="Email"
+                        />
+                    </Column>
+                    <Column id="idPhoneNumberColumn">
+                        <Text
+                            id="idPhoneNumberColText"
+                            text="PhoneNumber"
+                        />
+                    </Column>
+                    <Column id="idAgeColumn">
+                        <Text
+                            id="idAgeColText"
+                            text="Age"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idEmployeeColumnListItem" type="Navigation">
+                        <cells>
+                            <Text
+                                id="idNameCellText"
+                                text="{fName} {lName}"
+                            />
+                            <Link
+                                id="idEmailCellText"
+                                text="{email}"
+                                href="mailto:{email}"
+                            />
+                            <Link
+                                id="idPhoneCellText"
+                                text="{phoneNumber}"
+                                href="mailto:{email}"
+                            />
+                            <Text
+                                id="idAgeCellText"
+                                text="{age}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

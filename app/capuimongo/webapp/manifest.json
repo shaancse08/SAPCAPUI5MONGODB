@@ -100,19 +100,27 @@
       "routes": [
         {
           "name": "RouteRoot",
-          "pattern": ":?query:",
-          "target": [
-            "TargetRoot"
-          ]
+          "pattern": ":layout:",
+          "target": ["TargetRoot"]
+        },
+        {
+          "pattern": "detail/{empId}/{layout}",
+          "name": "EmpDetail",
+          "target": ["TargetRoot", "TargetEmpDetail"]
         }
       ],
       "targets": {
         "TargetRoot": {
           "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
           "viewId": "Root",
-          "viewName": "Root"
+          "viewName": "Root",
+          "controlAggregation": "beginColumnPages"
+        },
+        "TargetEmpDetail": {
+          "viewType": "XML",
+          "viewId": "EmployeeDetail",
+          "viewName": "EmployeeDetail",
+          "controlAggregation": "midColumnPages"
         }
       }
     },

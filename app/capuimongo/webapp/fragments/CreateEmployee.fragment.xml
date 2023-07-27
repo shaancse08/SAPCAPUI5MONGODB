@@ -55,6 +55,7 @@
             />
             <DatePicker
                 id="idDOBText"
+                valueFormat="yyyy-MM-dd"
                 value=""
             />
 

@@ -33,27 +33,32 @@ sap.ui.define(
         this.oCreateFragment.open();
       },
 
-      onSaveEmployeeDetails: function (oEvent) {
+      onSaveEmployeeDetails: async function () {
         const oView = this.getView();
         const oEmployeePayload = {
           fName: oView.byId("idFNameText").getValue(),
           lName: oView.byId("idlNameText").getValue(),
           DOB: oView.byId("idDOBText").getValue(),
           email: oView.byId("idEmailText").getValue(),
-          phone: oView.byId("idPhoneNumberText").getValue(),
+          phoneNumber: parseInt(oView.byId("idPhoneNumberText").getValue()),
+          age: null,
+          address__id: "",
         };
 
         const oAddressPayload = {
           street: oView.byId("idStreetText").getValue(),
           city: oView.byId("idCityText").getValue(),
-          pincode: oView.byId("idPinCodeText").getValue(),
+          pincode: parseInt(oView.byId("idPinCodeText").getValue()),
           country: oView.byId("idCountryText").getValue(),
           landmark: oView.byId("idLandMarkText").getValue(),
         };
 
-        const oModel = oView.getModel();
-
-
+        const sAddressId = await this.postDataToBackend(
+          "/Address",
+          oAddressPayload
+        );
+        oEmployeePayload.address__id = sAddressId;
+        this.postDataToBackend("/EmployeeDetails", oEmployeePayload);
       },
 
       onDialogClose: function (oEvent) {
@@ -71,7 +76,30 @@ sap.ui.define(
         return oFragment;
       },
 
-      // postDataToBackend: function(sPath, oPayload, )
+      postDataToBackend: async function (sPath, oPayload) {
+        const oModel = this.getView().getModel();
+
+        const oBindingContext = oModel.bindList(sPath);
+        const oCreateContext = oBindingContext.create(oPayload);
+        const aResult = await oCreateContext.created();
+        if (sPath === "/Address") {
+          return oCreateContext.sPath
+            .split("(")[1]
+            .split(")")[0]
+            .replaceAll("'", "");
+        }
+        return aResult;
+
+        // return new Promise((resolve, reject) => {
+
+        //     .then(function (oSuccessData) {
+        //       resolve(oSuccessData);
+        //     })
+        //     .catch(function (oErrorData) {
+        //       reject(oErrorData);
+        //     });
+        // });
+      },
     });
   }
 );

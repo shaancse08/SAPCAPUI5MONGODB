@@ -24,7 +24,14 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
-      }
+      },
+      "mainServicev2": {
+        "uri": "/v2/EmpSRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/metadata.xml"
+        }
+      }      
     }
   },
   "sap.ui": {
@@ -78,7 +85,17 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      }
+      },
+      "mainv2": {
+        "dataSource": "mainServicev2",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }      
     },
     "resources": {
       "css": [

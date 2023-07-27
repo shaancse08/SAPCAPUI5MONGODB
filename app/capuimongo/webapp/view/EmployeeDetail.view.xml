@@ -47,7 +47,7 @@
                                     />
                                     <Text
                                         id="idDOBText"
-                                        text="{DOB}"
+                                        text="{path: 'DOB', formatter: '.formatter.getDateFormatted'}"
                                     />
                                 </form:SimpleForm>
                             </VBox>

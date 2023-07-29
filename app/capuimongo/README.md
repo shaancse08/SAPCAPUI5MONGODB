@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Jul 27 2023 11:14:07 GMT+0530 (India Standard Time)|
+|**Generation Date and Time**<br>Sat Jul 29 2023 21:04:50 GMT+0530 (India Standard Time)|
 |**App Generator**<br>@sap/generator-fiori-freestyle|
 |**App Generator Version**<br>1.10.3|
 |**Generation Platform**<br>Visual Studio Code|
@@ -9,7 +9,7 @@
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/EmpSRV/
 |**Module Name**<br>capuimongo|
-|**Application Title**<br>Cap UI5 Mongo|
+|**Application Title**<br>CAP UI5 Mongo App|
 |**Namespace**<br>cap.ui.mongo|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.116.0|

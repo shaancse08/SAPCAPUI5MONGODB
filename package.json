@@ -1,22 +1,38 @@
 {
-  "name": "cap-ui5-mongodb",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^6",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
-    "express": "^4",
-    "mongoose": "^7.4.0"
-  },
-  "devDependencies": {
-    "@sap/ux-specification": "^1.108.10",
-    "sqlite3": "^5"
-  },
-  "scripts": {
-    "start": "cds-serve",
-    "watch-capuimongo": "cds watch --open capuimongo/webapp/index.html?sap-ui-xx-viewCache=false"
-  }
+    "name": "cap-ui5-mongodb",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^6",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "mongoose": "^7.4.0",
+        "passport": "^0"
+    },
+    "devDependencies": {
+        "@sap/ux-specification": "^1.108.10",
+        "sqlite3": "^5",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-capuimongo": "cds watch --open capuimongo/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy cap-ui5-mongodb --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "cds": {
+        "requires": {
+            "auth": {
+                "kind": "xsuaa"
+            },
+            "approuter": {
+                "kind": "cloudfoundry"
+            }
+        }
+    }
 }

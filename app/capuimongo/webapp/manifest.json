@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.10.3",
-      "toolsId": "ea2e07ac-0dca-4bbc-857d-f83f9e3de753"
+      "toolsId": "66946ff1-ad3b-410d-90af-f5934b6e9c50"
     },
     "dataSources": {
       "mainService": {
@@ -24,14 +24,22 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
-      },
-      "mainServicev2": {
-        "uri": "/v2/EmpSRV/",
-        "type": "OData",
-        "settings": {
-          "localUri": "localService/metadata.xml"
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "cap-ui-mongo-capuimongo-inbound": {
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "semanticObject": "CAPUIMongo",
+          "action": "Display",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "icon": ""
         }
-      }      
+      }
     }
   },
   "sap.ui": {
@@ -85,17 +93,7 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      },
-      "mainv2": {
-        "dataSource": "mainServicev2",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      }      
+      }
     },
     "resources": {
       "css": [

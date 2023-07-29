@@ -1,0 +1,23 @@
+{
+  "controller/Root.controller.js": 1690645095998,
+  "i18n/i18n.properties": 1690644976867,
+  "model/models.js": 1690644890591,
+  "model/formatter.js": 1690645212599,
+  "manifest.json": 1690651352035,
+  "controller/EmployeeDetail.controller.js": 1690645152717,
+  "controller/App.controller.js": 1690645027272,
+  "Component.js": 1690645061975,
+  "Component-preload.js": 1690651352354,
+  "controller/Root-dbg.controller.js": 1690645095998,
+  "model/formatter-dbg.js": 1690645212599,
+  "model/models-dbg.js": 1690644890591,
+  "controller/EmployeeDetail-dbg.controller.js": 1690645152717,
+  "controller/App-dbg.controller.js": 1690645027272,
+  "Component-dbg.js": 1690645061975,
+  "view/Root.view.xml": 1690645080285,
+  "view/EmployeeDetail.view.xml": 1690645160122,
+  "view/App.view.xml": 1690645020446,
+  "fragments/CreateEmployee.fragment.xml": 1690645221466,
+  "css/style.css": 1690644890596,
+  "index.html": 1690644890585
+}

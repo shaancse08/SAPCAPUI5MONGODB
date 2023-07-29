@@ -34,9 +34,9 @@ modules:
       name: ui5
       url: https://ui5.sap.com
   parameters:
-    disk-quota: 256M
+    disk-quota: 1024M
     keep-existing-routes: true
-    memory: 256M
+    memory: 1024M
 - name: cap-ui5-mongodb-app-content
   type: com.sap.application.content
   path: .
@@ -65,9 +65,6 @@ resources:
 - name: cap-ui5-mongodb-auth
   type: org.cloudfoundry.managed-service
   parameters:
-    config:
-      tenant-mode: dedicated
-      xsappname: cap-ui5-mongodb-${org}-${space}
     path: ./xs-security.json
     service: xsuaa
     service-plan: application

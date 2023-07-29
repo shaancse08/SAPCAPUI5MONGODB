@@ -1,5 +1,47 @@
 {
-  "scopes": [],
+  "xsappname": "capuimongo-xs-app",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.CAPUIMongoRead",
+      "description": "To Read the Application"
+    },
+    {
+      "name": "$XSAPPNAME.CAPUIMongoAdmin",
+      "description": "For Administrator Purpose"
+    }
+  ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name": "CAPUIMongoRead",
+      "description": "To Read the Application",
+      "scope-references": ["$XSAPPNAME.CAPUIMongoRead"]
+    },
+    {
+      "name": "CAPUIMongoAdmin",
+      "description": "For Administrator Purpose",
+      "scope-references": ["$XSAPPNAME.CAPUIMongoAdmin"]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "CAPUIMongoRead",
+      "description": "Read the Application",
+      "role-template-references": [
+        "$XSAPPNAME.CAPUIMongoRead"
+      ]
+    },
+    {
+      "name": "CAPUIMongoAdmin",
+      "description": "For Admin Purpose",
+      "role-template-references": [
+        "$XSAPPNAME.CAPUIMongoAdmin"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "token-validity": 3600,
+    "redirect-uris": ["https://*/**"]
+  }
 }

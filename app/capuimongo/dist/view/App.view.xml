@@ -1,0 +1,18 @@
+<mvc:View controllerName="cap.ui.mongo.capuimongo.controller.App"
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc"
+displayBlock="true"
+xmlns="sap.f"
+xmlns:m="sap.m"
+>
+<m:App>
+    <m:pages>
+        <FlexibleColumnLayout
+            id="app"
+            stateChange="onStateChanged"
+            layout="{fclModel>/layout}"
+            backgroundDesign="Translucent"
+        />
+    </m:pages>
+</m:App>
+</mvc:View>

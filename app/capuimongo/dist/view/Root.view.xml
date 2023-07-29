@@ -1,0 +1,103 @@
+<mvc:View
+    controllerName="cap.ui.mongo.capuimongo.controller.Root"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="true"
+    >
+        <content>
+            <Table
+                id="idEmployeeTable"
+                items="{/EmployeeDetails}"
+                itemPress="onEmployeePress"
+                mode="SingleSelectMaster"
+            >
+                <headerToolbar>
+                    <OverflowToolbar id="idEmployeeTableHeader">
+                        <Title
+                            id="idEmployeeTableBar"
+                            text="Employees"
+                        />
+                        <ToolbarSpacer id="idEmployeeTableSpacer" />
+                        <Button
+                            id="idCreateButton"
+                            icon="sap-icon://add"
+                            press="onCreateEmployee"
+                        />
+                        <Button
+                            id="idDeleteButton"
+                            icon="sap-icon://delete"
+                            press="onDeleteEmployee"
+                        />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="idNameColumn">
+                        <Text
+                            id="idNameColText"
+                            text="Name"
+                        />
+                    </Column>
+                    <Column id="idEmailColumn">
+                        <Text
+                            id="idEmailColText"
+                            text="Email"
+                        />
+                    </Column>
+                    <Column id="idPhoneNumberColumn">
+                        <Text
+                            id="idPhoneNumberColText"
+                            text="PhoneNumber"
+                        />
+                    </Column>
+                    <Column id="idAgeColumn">
+                        <Text
+                            id="idAgeColText"
+                            text="Age"
+                        />
+                    </Column>
+                    <Column id="idDOBColumn">
+                        <Text
+                            id="idDOBColText"
+                            text="DOB"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        id="idEmployeeColumnListItem"
+                        type="Navigation"
+                    >
+                        <cells>
+                            <Text
+                                id="idNameCellText"
+                                text="{fName} {lName}"
+                            />
+                            <Link
+                                id="idEmailCellText"
+                                text="{email}"
+                                href="mailto:{email}"
+                            />
+                            <Link
+                                id="idPhoneCellText"
+                                text="{path: 'phoneNumber', formatter: '.formatter.getPhoneNumberFromatted'}"
+                            />
+                            <Text
+                                id="idAgeCellText"
+                                text="{age}"
+                            />
+                            <Text
+                                id="idDOBCellText"
+                                text="{path: 'DOB', formatter: '.formatter.getDateFormatted'}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

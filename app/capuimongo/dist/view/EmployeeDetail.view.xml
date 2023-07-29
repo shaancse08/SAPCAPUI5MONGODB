@@ -1,0 +1,93 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap"
+    controllerName="cap.ui.mongo.capuimongo.controller.EmployeeDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <uxap:ObjectPageLayout
+        id="idEmployeeDetailObjectPage"
+        upperCaseAnchorBar="true"
+    >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle
+                id="idEmpDtlObjectPageHeaderTitle"
+            >
+                <uxap:heading>
+                    <Title
+                        id="idEmpDtlTitle"
+                        text="{fName} {lName}"
+                    />
+                </uxap:heading>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection
+                id="idEmpDtlGeneralSection"
+                title="General Section"
+                titleUppercase="true"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="idEmpDtlGeneralSubSection">
+                        <uxap:blocks>
+                            <VBox id="idGeneralInfoVBox">
+                                <form:SimpleForm
+                                    id="idGeneralInfoForm"
+                                    editable="false"
+                                    layout="ColumnLayout"
+                                    columnsXL="4"
+                                    columnsL="3"
+                                    columnsM="2"
+                                    singleContainerFullSize="false"
+                                >
+                                    <Label
+                                        id="idDOB"
+                                        text="Date of Birth"
+                                    />
+                                    <Text
+                                        id="idDOBText"
+                                        text="{path: 'DOB', formatter: '.formatter.getDateFormatted'}"
+                                    />
+                                </form:SimpleForm>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <!-- Address Section -->
+            <uxap:ObjectPageSection
+                id="idEmpDtlAddressSection"
+                title="Address"
+                titleUppercase="true"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="idEmpDtlAddressSubSection">
+                        <uxap:blocks>
+                            <VBox id="idAddressInfoVBox">
+                                <form:SimpleForm
+                                    id="idAddressInfoForm"
+                                    editable="false"
+                                    layout="ColumnLayout"
+                                    columnsXL="4"
+                                    columnsL="3"
+                                    columnsM="2"
+                                    singleContainerFullSize="false"
+                                >
+                                    <Label
+                                        id="idStreet"
+                                        text="Date of Birth"
+                                    />
+                                    <Text
+                                        id="idStreetText"
+                                        text="{address/0/street}"
+                                    />
+                                </form:SimpleForm>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>
